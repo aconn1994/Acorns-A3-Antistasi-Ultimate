@@ -319,6 +319,15 @@ class Templates
         description = $STR_A3AP_setupFactionsTab_napa_3cbf;
     };
 
+    class RHS_Special_Forces : RHS_Base
+    {
+        side = "Reb";
+        flagTexture = "a3\data_f\flags\flag_us_co.paa";
+        name = "RHS Special Forces";
+        file = "RHS_Reb_Special_Forces";
+        description = "US Army Special Forces or Green Berets, specializing in unconventional warfare, foreign internal defense, direct action, counterterrorism, and special reconnaissance.";
+    };
+
     class RHS_CDF : RHS_Base
     {
         side = "Occ";

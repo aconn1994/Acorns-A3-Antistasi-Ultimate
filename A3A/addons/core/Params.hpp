@@ -94,9 +94,9 @@ class Params
     class initialPlayerMoney
     {
         title = $STR_params_playerStartingMoney;
-        values[] = {0, 100, 200, 500, 1000, 2500};
-        texts[] = {"0", "100", "200", "500","1000","2500"};
-        default = 500;
+        values[] = {0, 100, 200, 500, 1000, 2500, 10000};
+        texts[] = {"0", "100", "200", "500","1000","2500", "10000"};
+        default = 10000;
     };
     class initialFactionMoney
     {
@@ -110,7 +110,7 @@ class Params
         title = $STR_params_initialHr;
         values[] = {0, 8, 16, 24, 32, 50};
         texts[] = {"0","8","16","24","32","50"};
-        default = 8;
+        default = 50;
     };
     class limitHR
     {
