@@ -86,27 +86,72 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 //  Rebel Starting Gear  //
 ///////////////////////////
 
-private _initialRebelEquipment = [
-    "TOTT_416_145_SMR_Dark_CTR_RISR_grip2", "TOTT_416_104_SMR_Dark_CTR", "rhs_mag_30Rnd_556x45_M855A1_Stanag",
+private _initialRebelEquipment = [];
+
+private _assaultRifles = [
+    "TOTT_416_145_SMR_Dark_CTR_RISR_grip2", "TOTT_416_104_SMR_Dark_CTR", "rhs_weap_hk416d145_m320", "rhs_mag_30Rnd_556x45_M855A1_Stanag"
+];
+_initialRebelEquipment append _assaultRifles;
+
+private _subMachineGuns = [
+    "rhsusf_weap_MP7A2", "rhsusf_mag_40Rnd_46x30_FMJ"
+];
+_initialRebelEquipment append _subMachineGuns;
+
+private _lightMachineGuns = [
+    "rhs_weap_m249_pip_L", "rhs_weap_m249_pip_S", "rhsusf_200Rnd_556x45_box"
+
+];
+_initialRebelEquipment append _lightMachineGuns;
+
+private _sniperRifles = [
     "rhs_weap_XM2010_sa", "rhsusf_5Rnd_300winmag_xm2010",
-    "rhs_weap_m249_pip_L", "rhsusf_200Rnd_556x45_box",
-    "rhsusf_weap_MP7A2", "rhsusf_mag_40Rnd_46x30_FMJ",
-    "rhs_weap_M590_8RD", "rhsusf_8Rnd_00Buck",
+    "rhs_weap_M107", "rhsusf_mag_10Rnd_STD_50BMG_mk211", "rhsusf_mag_10Rnd_STD_50BMG_M33",
+    "rhs_weap_sr25", "rhsusf_20Rnd_762x51_SR25_m118_special_Mag"
+];
+_initialRebelEquipment append _sniperRifles;
+
+private _shotguns = [
+    "rhs_weap_M590_8RD", "rhsusf_8Rnd_00Buck"
+];
+_initialRebelEquipment append _shotguns;
+
+private _launchers = [
     "launch_MRAWS_green_F", "MRAWS_HEAT_F",
     "rhs_mag_m67", "rhs_mag_an_m8hc",
     "rhs_weap_M320", "rhs_mag_M441_HE", "rhs_mag_m714_White",
-    ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3], ["rhsusf_m112_mag", 50],
-    "B_FieldPack_oli",
+    "rhs_weap_fgm148", "rhs_fgm148_magazine_AT",
+    "rhs_weap_fim92", "rhs_fim92_mag"
+];
+_initialRebelEquipment append _launchers;
+
+private _attachments = [
+    "rhsusf_acc_nt4_black", // RHS M249
+    "rhsusf_acc_rotex_mp7", // RHS MP7
+    "TOTT_Razor_110_Geissele", "TOTT_EXPS3_Tan", "TOTT_t2_unity", "TOTT_t2_gmicro193",
+    "rhsusf_acc_M8541_d", "rhsusf_acc_premier_anpvs27",
+    "TOTT_416_145_Side5_IR", "TOTT_RC1_416_FDE", "rhsusf_acc_anpeq15side_bk", 
+    "rhsusf_acc_saw_lw_bipod", "rhsusf_acc_harris_bipod"
+];
+_initialRebelEquipment append _attachments;
+
+private _explosives = [
+    ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3],
+    ["IEDLandBig_Remote_Mag", 3], "rhsusf_m112_mag"
+];
+_initialRebelEquipment append _explosives;
+
+private _equipment = [
     "Binocular", "ItemRadio",
     "Laserdesignator", "Laserbatteries",
-    "rhs_weap_rsp30_white","rhs_mag_rsp30_white",
-    "rhs_weap_rsp30_green","rhs_mag_rsp30_green",
-    "rhs_weap_rsp30_red", "rhs_mag_rsp30_red",
-    "rhs_mag_nspd", "rhs_mag_nspn_yellow", "rhs_mag_nspn_green", "rhs_mag_nspn_red",
-    "rhsgref_chicom","V_BandollierB_oli", "rhsusf_mbav_rifleman",
-    "TOTT_Razor_110_Geissele", "TOTT_EXPS3_Tan", "TOTT_t2_unity", "rhsusf_acc_M8541_d", "rhsusf_acc_premier_anpvs27", "TOTT_t2_gmicro193",
-    "TOTT_416_145_Side5_IR", "TOTT_RC1_416_FDE", "rhsusf_acc_rotex_mp7", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_saw_lw_bipod", "rhsusf_acc_harris_bipod"
+    "MineDetector"
 ];
+_initialRebelEquipment append _equipment;
+
+private _kit = [
+    "rhsgref_chicom", "V_BandollierB_oli", "rhsusf_mbav_rifleman"
+];
+_initialRebelEquipment append _kit;
 
 private _backpacks = ["rhsusf_assault_eagleaiii_coy"];
 if (_hasLawsOfWar) then {
@@ -133,19 +178,19 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-    "rhs_uniform_g3_m81",
-    "rhsgref_uniform_alpenflage",
-    "rhsgref_uniform_gorka_1_f",
-    "rhsgref_uniform_3color_desert",
-    "rhsgref_uniform_dpm",
-    "rhsgref_uniform_dpm_olive",
-    "rhsgref_uniform_flecktarn",
-    "rhsgref_uniform_flecktarn_full",
-    "rhsgref_uniform_og107",
-    "rhsgref_uniform_og107_erdl",
-    "rhsgref_uniform_tigerstripe",
-    "rhsgref_uniform_woodland",
-    "rhsgref_uniform_woodland_olive"
+    "rhs_uniform_g3_m81"
+    // "rhsgref_uniform_alpenflage",
+    // "rhsgref_uniform_gorka_1_f",
+    // "rhsgref_uniform_3color_desert",
+    // "rhsgref_uniform_dpm",
+    // "rhsgref_uniform_dpm_olive",
+    // "rhsgref_uniform_flecktarn",
+    // "rhsgref_uniform_flecktarn_full",
+    // "rhsgref_uniform_og107",
+    // "rhsgref_uniform_og107_erdl",
+    // "rhsgref_uniform_tigerstripe",
+    // "rhsgref_uniform_woodland",
+    // "rhsgref_uniform_woodland_olive"
 ];
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;
@@ -164,16 +209,16 @@ private _rebUniforms = [
 ///  Identities   ///
 /////////////////////
 
-["faces", [
-    "LivonianHead_1", "LivonianHead_2", "LivonianHead_3", "LivonianHead_4",
-    "LivonianHead_5", "LivonianHead_6", "LivonianHead_7", "LivonianHead_8",
-    "LivonianHead_9", "LivonianHead_10","Sturrock","WhiteHead_01","WhiteHead_02","WhiteHead_03",
-    "WhiteHead_05","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10",
-    "WhiteHead_12","WhiteHead_13","WhiteHead_14","WhiteHead_15","WhiteHead_16",
-    "WhiteHead_17","WhiteHead_19","WhiteHead_20","WhiteHead_21"
+["faces", ["AfricanHead_01","AfricanHead_02","AfricanHead_03","Barklem",
+"GreekHead_A3_05","GreekHead_A3_07","Sturrock","WhiteHead_01","WhiteHead_02",
+"WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07",
+"WhiteHead_08","WhiteHead_09","WhiteHead_11","WhiteHead_12","WhiteHead_14",
+"WhiteHead_15","WhiteHead_16","WhiteHead_18","WhiteHead_19","WhiteHead_20",
+"WhiteHead_21","WhiteHead_23", "WhiteHead_24", "WhiteHead_25",
+"WhiteHead_26", "WhiteHead_27", "WhiteHead_28", "WhiteHead_29", "WhiteHead_30", "WhiteHead_31", "WhiteHead_32"
 ]] call _fnc_saveToTemplate;
-["voices", ["rhs_male01cz","rhs_male02cz","rhs_male03cz","rhs_male04cz","rhs_male05cz"]] call _fnc_saveToTemplate;
-"CzechMen" call _fnc_saveNames;
+["voices", ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"]] call _fnc_saveToTemplate;
+"NATOMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
@@ -212,6 +257,18 @@ private _squadLeaderTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
     ["binoculars"] call _fnc_addBinoculars;
+};
+
+private _medicTemplate = {
+    ["uniforms"] call _fnc_setUniform;
+    [selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1]] call _fnc_setFacewear;
+    
+    ["items_medical_standard"] call _fnc_addItemSet;
+    ["items_miscEssentials"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
 };
 
 private _riflemanTemplate = {
